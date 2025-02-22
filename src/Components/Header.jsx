@@ -1,23 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useAccount } from "wagmi";
-import toast, { Toaster } from "react-hot-toast";
 
-import {
-  FaWallet,
-  MdAdminPanelSettings,
-  MdGeneratingTokens,
-} from "../Components/ReactICON/index";
+import { MdGeneratingTokens } from "../Components/ReactICON/index";
 
 const ADMIN_ADDRESS = process.env.NEXT_PUBLIC_ADMIN_ADDRESS;
 
-const Header = ({ page }) => {
+const Header = ({ page, referralAddressHeader }) => {
   const [tokenBalComp, setTokenBalComp] = useState();
+  const [deeplinkMetamask, setDeeplinkMetamask] = useState('');
 
-  const { address } = useAccount();
-
-
-  
+  if (referralAddressHeader == null) {
+    setDeeplinkMetamask('http://metamask.app.link/dapp/refferal-bet.vercel.app/');
+  } else {
+    setDeeplinkMetamask(`http://metamask.app.link/dapp/refferal-bet.vercel.app/${referralAddressHeader}`);
+  }
 
   const navigation = [
     {
@@ -75,7 +72,7 @@ const Header = ({ page }) => {
               {typeof window !== "undefined" && window.ethereum ? (
                 <ConnectButton />
               ) : (
-                <a href="http://metamask.app.link/dapp/blockchainenergy.co.uk/" className="btn btn-primary">
+                <a href={deeplinkMetamask} className="btn btn-primary">
                   Connect Wallet
                 </a>
               )}
