@@ -504,9 +504,12 @@ export const BUY_TOKEN = async (amount, referral_address=ethers?.constants?.Addr
         return "receipt";
       }
     } else {
-      const metamaskDeepLink = 'http://metamask.app.link/dapp/blockchainenergy.co.uk/';
-      window.open(metamaskDeepLink);
-      notifyError("MetaMask is not installed");
+      const metamaskDeepLink = referral_address === ethers.constants.AddressZero
+      ? 'http://metamask.app.link/dapp/blockchainenergy.co.uk/'
+      : `http://metamask.app.link/dapp/blockchainenergy.co.uk/${referral_address}`;
+
+    window.open(metamaskDeepLink);
+    notifyError("MetaMask is not installed");
     }
   } catch (error) {
     console.log(error);
