@@ -75,7 +75,7 @@ const HeroSection = ({ poolDetails, addTokenToMetaMask }) => {
 
   // copy referral link
   const [copied, setCopied] = useState(false);
-  const referralLink = `http://localhost:3000/${address}`;
+  const referralLink = `https://refferal-bet.vercel.app/${address}`;
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(referralLink);
