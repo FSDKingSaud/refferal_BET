@@ -69,14 +69,14 @@ export default function ReferralPage({ referralAddress }) {
   };
 
   useEffect(() => {
-    console.log('referralAddress',referralAddress);
-    LOAD_DATA();    
+    console.log('referralAddress', referralAddress);
+    LOAD_DATA();
   }, [address]);
 
   return (
     <>
       <OnLoadModal />
-      <Header />
+      <Header referralAddressHeader={referralAddress} />
       <HeroSection
         poolDetails={poolDetails}
         addTokenToMetaMask={addTokenToMetaMask}
@@ -89,7 +89,7 @@ export default function ReferralPage({ referralAddress }) {
         poolDetails={poolDetails}
         setSelectedPool={setSelectedPool}
         setSelectedToken={setSelectedToken}
-        
+
       />
       <Token poolDetails={poolDetails} />
 

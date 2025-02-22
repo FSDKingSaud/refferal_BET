@@ -61,13 +61,13 @@ const index = () => {
   };
 
   useEffect(() => {
-    LOAD_DATA();    
+    LOAD_DATA();
   }, [address]);
 
   return (
     <>
       <OnLoadModal />
-      <Header />
+      <Header referralAddressHeader={null} />
       <HeroSection
         poolDetails={poolDetails}
         addTokenToMetaMask={addTokenToMetaMask}
@@ -80,7 +80,7 @@ const index = () => {
         poolDetails={poolDetails}
         setSelectedPool={setSelectedPool}
         setSelectedToken={setSelectedToken}
-        
+
       />
       <Token poolDetails={poolDetails} />
 
