@@ -1,0 +1,756 @@
+nav.navbar {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: relative;
+    z-index: 10;
+}
+
+nav.navbar a.nav-link {
+    color: #fff;
+}
+
+nav.navbar a.nav-link:hover {
+    color: #ffcc00;
+}
+
+
+/* video */
+.hero__video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero__video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.hero__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+
+
+#particles-js,
+#particles-js.body-bg {
+    background: none !important;
+    height: 100%;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    #home.iq-banner-2 {
+        height: auto;
+    }
+
+    #particles-js {
+        height: auto !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* Chart */
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+#myPieChart {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+
+.legend-list {
+    list-style: none;
+    padding: 0;
+}
+
+.legend-list li {
+    margin-bottom: 10px;
+}
+
+.legend-color {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.centered-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+/* About Section */
+.custom-left-col,
+.custom-right-col {
+    opacity: 0;
+    transform: perspective(1000px) rotateY(90deg);
+}
+
+.custom-left-col.animate {
+    animation: slideIn3DLeft 1s ease-out forwards;
+}
+
+.custom-right-col.animate {
+    animation: slideIn3DRight 1s ease-out forwards;
+}
+
+@keyframes slideIn3DLeft {
+    0% {
+        transform: perspective(1000px) rotateY(90deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: perspective(1000px) rotateY(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn3DRight {
+    0% {
+        transform: perspective(1000px) rotateY(-90deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: perspective(1000px) rotateY(0deg);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 767px) {
+    .custom-left-col,
+    .custom-right-col {
+        transform: perspective(500px) rotateY(45deg);
+    }
+
+    @keyframes slideIn3DLeft {
+        0% {
+            transform: perspective(500px) rotateY(45deg);
+            opacity: 0;
+        }
+
+        100% {
+            transform: perspective(500px) rotateY(0deg);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideIn3DRight {
+        0% {
+            transform: perspective(500px) rotateY(-45deg);
+            opacity: 0;
+        }
+
+        100% {
+            transform: perspective(500px) rotateY(0deg);
+            opacity: 1;
+        }
+    }
+}
+
+
+
+
+
+
+/* Vision & Mission */
+.custom-left,
+.custom-right {
+    opacity: 0;
+}
+
+@media (min-width: 992px) {
+    .custom-left {
+        transform: translateX(-100%);
+    }
+
+    .custom-right {
+        transform: translateX(100%);
+    }
+}
+
+.custom-left.animate {
+    animation: slideInFromLeft 1s ease-out forwards;
+}
+
+.custom-right.animate {
+    animation: slideInFromRight 1s ease-out forwards;
+}
+
+@media (max-width: 991px) {
+    .custom-left,
+    .custom-right {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .custom-left.animate,
+    .custom-right.animate {
+        animation: fadeIn 1s ease-out forwards;
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+/* Approved By Section Animations */
+.custom-aproved-by-left,
+.custom-aproved-by-right {
+  opacity: 0;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Left column animation */
+.custom-aproved-by-left {
+  transform: translateX(-100px); /* Start from left */
+}
+
+/* Right column animation */
+.custom-aproved-by-right {
+  transform: translateX(100px); /* Start from right */
+}
+
+/* Add animation when element comes into view */
+.custom-aproved-by-left.animate,
+.custom-aproved-by-right.animate {
+  opacity: 1;
+  transform: translateX(0); /* Reset to normal position */
+}
+
+/* Mobile/Tablet Responsive Adjustments */
+/* Medium screens (tablet) */
+@media (max-width: 992px) {
+  .custom-aproved-by-left,
+  .custom-aproved-by-right {
+    opacity: 1; /* Make sure elements are visible */
+    transform: translateX(0); /* Reset position on tablet */
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out; /* Faster transition */
+  }
+
+  .custom-aproved-by-left.animate,
+  .custom-aproved-by-right.animate {
+    transform: translateX(0); /* Ensure smooth reset */
+  }
+}
+
+/* Small screens (mobile) */
+@media (max-width: 768px) {
+  .custom-aproved-by-left,
+  .custom-aproved-by-right {
+    opacity: 1; /* Ensure visibility */
+    transform: translateY(0); /* Vertical translation on mobile */
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out; /* Faster transition */
+  }
+
+  .custom-aproved-by-left.animate,
+  .custom-aproved-by-right.animate {
+    transform: translateY(0); /* Ensure smooth transition */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Product Overview */
+.custom-prod-above {
+    opacity: 0;
+    transform: translateY(-100px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.custom-prod-above.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.custom-prod-table-left,
+.custom-prod-table-right {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+.custom-prod-table-left {
+    transform: translateX(-100px);
+}
+
+.custom-prod-table-left.animate,
+.custom-prod-table-right.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+
+
+
+
+
+
+/* General Animation Adjustments */
+.custom-prod-above,
+.custom-prod-table-left,
+.custom-prod-table-right,
+.custom-animate-token-above,
+.custom-chart-left,
+.custom-chart-right {
+    opacity: 0;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Top Section Animation */
+.custom-prod-above {
+    transform: translateY(-50px);
+}
+
+.custom-prod-above.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Token Table Animation */
+.custom-prod-table-left {
+    transform: translateX(-50px);
+}
+
+.custom-prod-table-right {
+    transform: translateX(50px);
+}
+
+.custom-prod-table-left.animate,
+.custom-prod-table-right.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Token Sale Process Section */
+.custom-animate-token-above {
+    transform: translateY(-50px);
+}
+
+.custom-animate-token-above.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Chart Animation */
+.custom-chart-left {
+    transform: translateX(-50px);
+}
+
+.custom-chart-right {
+    transform: translateX(50px);
+}
+
+.custom-chart-left.animate,
+.custom-chart-right.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Responsive Fixes for Small Screens */
+@media (max-width: 768px) {
+    .custom-prod-table-left,
+    .custom-prod-table-right,
+    .custom-chart-left,
+    .custom-chart-right {
+        transform: translateY(30px);
+    }
+
+    .custom-prod-table-left.animate,
+    .custom-prod-table-right.animate,
+    .custom-chart-left.animate,
+    .custom-chart-right.animate {
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
+/* Features Section Animations */
+.custom-feature-animate-left,
+.custom-feature-animate-right,
+.custom-feature-animate-top {
+  opacity: 0;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.custom-feature-animate-left {
+  transform: translateX(-100px); /* Start from left */
+}
+
+.custom-feature-animate-right {
+  transform: translateX(100px); /* Start from right */
+}
+
+.custom-feature-animate-top {
+  transform: translateY(-50px); /* Start from above */
+}
+
+.custom-feature-animate-left.animate,
+.custom-feature-animate-right.animate,
+.custom-feature-animate-top.animate {
+  opacity: 1;
+  transform: translateX(0) translateY(0); /* Reset to normal position */
+}
+
+/* Responsive adjustments */
+
+@media (max-width: 992px) {
+  .custom-feature-animate-left,
+  .custom-feature-animate-right,
+  .custom-feature-animate-top {
+    opacity: 1; /* Make sure elements are visible */
+    transform: translateX(0) translateY(0); /* No translation on tablet */
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out; /* Faster animation */
+  }
+
+  .custom-feature-animate-left.animate,
+  .custom-feature-animate-right.animate,
+  .custom-feature-animate-top.animate {
+    transform: translateX(0) translateY(0); /* Ensure smooth reset */
+  }
+}
+
+/* Small screens (mobile devices) */
+@media (max-width: 768px) {
+  .custom-feature-animate-left,
+  .custom-feature-animate-right,
+  .custom-feature-animate-top {
+    opacity: 1; /* Ensure visibility */
+    transform: translateY(0); /* Change to vertical movement */
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out; /* Faster transitions */
+  }
+
+  .custom-feature-animate-left.animate,
+  .custom-feature-animate-right.animate,
+  .custom-feature-animate-top.animate {
+    transform: translateY(0); /* Ensure smooth transition */
+  }
+}
+
+/* Extra small screens (portrait mobile) */
+@media (max-width: 576px) {
+  .custom-feature-animate-left,
+  .custom-feature-animate-right,
+  .custom-feature-animate-top {
+    opacity: 1; /* Keep elements visible */
+    transform: translateY(0); /* Vertical movement on mobile portrait */
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out; /* Fast transitions */
+  }
+
+  .custom-feature-animate-left.animate,
+  .custom-feature-animate-right.animate,
+  .custom-feature-animate-top.animate {
+    transform: translateY(0); /* Ensure smooth transition */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* Roadmap */
+.custom-roadmap-animate-top {
+    opacity: 0;
+    transform: translateY(-50px); /* Initial transform for top animation */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.custom-roadmap-animate-top.animate {
+    opacity: 1;
+    transform: translateY(0); /* Reset the Y translate for visible state */
+}
+
+/* Timeline Item Animations (left and right) */
+.custom-roadmap-animate-left,
+.custom-roadmap-animate-right {
+    opacity: 0;
+    transform: translateX(100px); /* Initial position for left and right items */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.custom-roadmap-animate-left {
+    transform: translateX(-100px); /* Initially position the left element off-screen */
+}
+
+.custom-roadmap-animate-right {
+    transform: translateX(100px); /* Initially position the right element off-screen */
+}
+
+.custom-roadmap-animate-left.animate,
+.custom-roadmap-animate-right.animate {
+    opacity: 1;
+    transform: translateX(0); /* Reset the transform for visible state */
+}
+
+/* Responsive Fixes */
+
+/* Medium screens (tablet) */
+@media (max-width: 992px) {
+    .custom-roadmap-animate-left,
+    .custom-roadmap-animate-right,
+    .custom-roadmap-animate-top {
+        transform: translateY(0); /* Reset Y transform */
+        opacity: 1; /* Keep opacity at 1 */
+        transition: opacity 0.4s ease-out, transform 0.4s ease-out; /* Slightly faster transitions */
+    }
+
+    .custom-roadmap-animate-left.animate,
+    .custom-roadmap-animate-right.animate,
+    .custom-roadmap-animate-top.animate {
+        transform: translateX(0); /* Reset the transform for smooth animation */
+    }
+}
+
+/* Small screens (mobile devices) */
+@media (max-width: 768px) {
+    .custom-roadmap-animate-left,
+    .custom-roadmap-animate-right,
+    .custom-roadmap-animate-top {
+        transform: translateY(0); /* Keep elements visible on small screens */
+        opacity: 1;
+        transition: opacity 0.3s ease-out, transform 0.3s ease-out; /* Even faster transitions for mobile */
+    }
+
+    .custom-roadmap-animate-left.animate,
+    .custom-roadmap-animate-right.animate,
+    .custom-roadmap-animate-top.animate {
+        transform: translateY(0); /* Ensure no unnecessary translation */
+    }
+}
+
+/* Extra small screens (portrait mobile) */
+@media (max-width: 576px) {
+    .custom-roadmap-animate-left,
+    .custom-roadmap-animate-right,
+    .custom-roadmap-animate-top {
+        transform: translateY(0); /* Keep elements visible and centered */
+        opacity: 1;
+        transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    }
+
+    .custom-roadmap-animate-left.animate,
+    .custom-roadmap-animate-right.animate,
+    .custom-roadmap-animate-top.animate {
+        transform: translateY(0); /* Ensure smooth translation */
+    }
+}
+
+
+
+
+
+
+/* FAQ Section Animations */
+.custom-animate-faq-left,
+.custom-animate-faq-right {
+    opacity: 0;
+    transform: translateX(100px); /* Initial off-screen position */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.custom-animate-faq-left {
+    transform: translateX(-100px); /* Left element starts from the left */
+}
+
+.custom-animate-faq-right {
+    transform: translateX(100px); /* Right element starts from the right */
+}
+
+.custom-animate-faq-left.animate,
+.custom-animate-faq-right.animate {
+    opacity: 1;
+    transform: translateX(0); /* Move to normal position when animated */
+}
+
+/* Responsive Fixes */
+
+/* Medium screens (tablet) */
+@media (max-width: 992px) {
+    .custom-animate-faq-left,
+    .custom-animate-faq-right {
+        transform: translateX(0); /* Center elements on tablet */
+        opacity: 1; /* Keep them visible */
+        transition: opacity 0.4s ease-out, transform 0.4s ease-out; /* Faster animation */
+    }
+
+    .custom-animate-faq-left.animate,
+    .custom-animate-faq-right.animate {
+        transform: translateX(0); /* Ensure smooth animation */
+    }
+}
+
+/* Small screens (mobile devices) */
+@media (max-width: 768px) {
+    .custom-animate-faq-left,
+    .custom-animate-faq-right {
+        transform: translateY(0); /* Change to vertical movement on small screens */
+        opacity: 1; /* Keep the elements visible */
+        transition: opacity 0.3s ease-out, transform 0.3s ease-out; /* Faster transitions for mobile */
+    }
+
+    .custom-animate-faq-left.animate,
+    .custom-animate-faq-right.animate {
+        transform: translateY(0); /* Ensure no unnecessary translation */
+    }
+}
+
+/* Extra small screens (portrait mobile) */
+@media (max-width: 576px) {
+    .custom-animate-faq-left,
+    .custom-animate-faq-right {
+        transform: translateY(0); /* No movement for mobile portrait */
+        opacity: 1; /* Keep elements visible */
+        transition: opacity 0.3s ease-out, transform 0.3s ease-out; /* Keep transitions fast */
+    }
+
+    .custom-animate-faq-left.animate,
+    .custom-animate-faq-right.animate {
+        transform: translateY(0); /* Ensure smooth translation */
+    }
+}
+
+
+
+
+
+
+
+
+
+/* ======== saudi custom css ============ */
+
+/* General Footer Styles */
+.footer__document-item {
+    background-color: #1d1d3e;
+    border: 1px solid #0b0b29;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.footer__document-item:hover {
+    transform: translateY(+5px);
+}
+
+.footer__document-item .icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Pagination Button Styles */
+.pagination .page-item.active .page-link {
+    background-color: #F9B707;
+    border-color: #F9B707;
+    color: white;
+}
+
+.pagination .page-item .page-link {
+    background-color: #333;
+    border-color: #333;
+    color: white;
+}
+
+.pagination .page-item.disabled .page-link {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: #ffffff;
+}
+
+.pagination .page-item .page-link:focus {
+    box-shadow: none;
+}
+
+.pagination .page-item:hover .page-link {
+    background-color: #555;
+}
+
+
+ol li::marker {
+    color: white;
+    font-weight: bold;
+    font-size: 18px; 
+}

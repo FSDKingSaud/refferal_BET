@@ -1,0 +1,554 @@
+nav.navbar {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: relative;
+    z-index: 10;
+}
+
+nav.navbar a.nav-link {
+    color: #fff;
+}
+
+nav.navbar a.nav-link:hover {
+    color: #ffcc00;
+}
+
+
+/* video */
+.hero__video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero__video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.hero__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+
+
+#particles-js,
+#particles-js.body-bg {
+    background: none !important;
+    height: 100%;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    #home.iq-banner-2 {
+        height: auto;
+    }
+
+    #particles-js {
+        height: auto !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* Chart */
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+#myPieChart {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+
+.legend-list {
+    list-style: none;
+    padding: 0;
+}
+
+.legend-list li {
+    margin-bottom: 10px;
+}
+
+.legend-color {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.centered-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Anitmated Button */
+.animated-button .cursor-hand {
+    position: absolute;
+    font-size: 30px;
+    color: #ffffff;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.animated-button .wave {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(0, 123, 255, 0.3);
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 50%) scale(0);
+    animation: wave-animation 1.5s ease-out infinite;
+    pointer-events: none;
+}
+
+.animated-button .wave:nth-child(1) {
+    animation-delay: 0s;
+    animation-duration: 1.5s;
+}
+
+.animated-button .wave:nth-child(2) {
+    animation-delay: 0.5s;
+    animation-duration: 2s;
+}
+
+.animated-button .wave:nth-child(3) {
+    animation-delay: 1s;
+    animation-duration: 2.5s;
+}
+
+@keyframes wave-animation {
+    0% {
+        transform: translate(-50%, 50%) scale(0.3);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, 50%) scale(4.5);
+        opacity: 0;
+    }
+}
+
+
+
+
+
+
+/* Dynamic Text */
+#dynamic-text {
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    padding-right: 5px;
+}
+
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+
+
+
+
+/* What is blockchain energy drink section */
+.custom-left-col,
+.custom-right-col {
+    opacity: 0;
+    transform: perspective(1000px) rotateY(90deg);
+}
+
+.custom-left-col.animate {
+    animation: slideIn3DLeft 1s ease-out forwards;
+}
+
+.custom-right-col.animate {
+    animation: slideIn3DRight 1s ease-out forwards;
+}
+
+@keyframes slideIn3DLeft {
+    0% {
+        transform: perspective(1000px) rotateY(90deg) translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: perspective(1000px) rotateY(0deg) translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn3DRight {
+    0% {
+        transform: perspective(1000px) rotateY(-90deg) translateX(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: perspective(1000px) rotateY(0deg) translateX(0);
+        opacity: 1;
+    }
+}
+
+.custom-left-col,
+.custom-right-col {
+    transform: perspective(1000px) rotateY(0deg);
+}
+
+.custom-left-col img {
+    /* transform: perspective(1000px) rotateY(15deg); */
+    transition: transform 0.3s ease-in-out;
+}
+
+.custom-left-col:hover img {
+    transform: perspective(1000px) rotateY(180deg);
+}
+
+
+
+
+/*  */
+.custom-left,
+.custom-right {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.custom-right {
+    transform: translateX(100%);
+}
+
+.custom-left.animate {
+    animation: slideInFromLeft 1s ease-out forwards;
+}
+
+.custom-right.animate {
+    animation: slideInFromRight 1s ease-out forwards;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+
+
+/*  */
+.custom-prod-above {
+    opacity: 0;
+    transform: translateY(-100px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.custom-prod-above.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.custom-prod-table-left,
+.custom-prod-table-right {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+.custom-prod-table-left {
+    transform: translateX(-100px);
+}
+
+.custom-prod-table-left.animate,
+.custom-prod-table-right.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.custom-animate-token-above {
+    opacity: 0;
+    transform: translateY(-100px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.custom-animate-token-above.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.custom-chart-left,
+.custom-chart-right {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+.custom-chart-left {
+    transform: translateX(-100px);
+}
+
+.custom-chart-left.animate,
+.custom-chart-right.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+
+
+
+
+
+
+.custom-features-above {
+    opacity: 0;
+    transform: translateY(-100px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.custom-features-above.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.custom-feature-animate-left,
+.custom-feature-animate-top,
+.custom-feature-animate-right {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.custom-feature-animate-left {
+    transform: translateX(-50px);
+}
+
+.custom-feature-animate-top {
+    transform: translateY(-50px);
+}
+
+.custom-feature-animate-right {
+    transform: translateX(50px);
+}
+
+.custom-feature-animate-left.animate,
+.custom-feature-animate-top.animate,
+.custom-feature-animate-right.animate {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+}
+
+
+
+
+
+
+
+
+.custom-roadmap-animate-top {
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.custom-roadmap-animate-top.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+
+/* Timeline Item Animations */
+.custom-roadmap-animate-left,
+.custom-roadmap-animate-right {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.custom-roadmap-animate-left {
+    transform: translateX(-100px);
+}
+
+.custom-roadmap-animate-right {
+    transform: translateX(100px);
+}
+
+.custom-roadmap-animate-left.animate,
+.custom-roadmap-animate-right.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+
+
+
+
+
+/* FAQ Section Animations */
+.custom-animate-faq-left,
+.custom-animate-faq-right {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.custom-animate-faq-left {
+    transform: translateX(-100px);
+}
+
+.custom-animate-faq-right {
+    transform: translateX(100px);
+}
+
+.custom-animate-faq-left.animate,
+.custom-animate-faq-right.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* General Footer Styles */
+.footer__document-item {
+    background-color: #1d1d3e;
+    border: 1px solid #0b0b29;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.footer__document-item:hover {
+    transform: translateY(+5px);
+}
+
+.footer__document-item .icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ======== saudi custom css ============ */
+
+/* Pagination Button Styles */
+.pagination .page-item.active .page-link {
+    background-color: #F9B707;
+    border-color: #F9B707;
+    color: white;
+}
+
+.pagination .page-item .page-link {
+    background-color: #333;
+    /* Dark color for inactive buttons */
+    border-color: #333;
+    /* Dark color border */
+    color: white;
+}
+
+.pagination .page-item.disabled .page-link {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: #ffffff;
+}
+
+.pagination .page-item .page-link:focus {
+    box-shadow: none;
+}
+
+.pagination .page-item:hover .page-link {
+    background-color: #555;
+}
+
+
+/* ============== saudi css =================== */
+ol li::marker {
+    color: white;
+    font-weight: bold;
+    font-size: 18px; 
+}
