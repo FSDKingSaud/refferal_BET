@@ -8,13 +8,10 @@ const ADMIN_ADDRESS = process.env.NEXT_PUBLIC_ADMIN_ADDRESS;
 
 const Header = ({ page, referralAddressHeader }) => {
   const [tokenBalComp, setTokenBalComp] = useState();
-  const [deeplinkMetamask, setDeeplinkMetamask] = useState('');
-
-  if (referralAddressHeader == null) {
-    setDeeplinkMetamask('http://metamask.app.link/dapp/refferal-bet.vercel.app/');
-  } else {
-    setDeeplinkMetamask(`http://metamask.app.link/dapp/refferal-bet.vercel.app/${referralAddressHeader}`);
-  }
+ 
+  const deeplinkMetamask = referralAddressHeader == null
+    ? 'http://metamask.app.link/dapp/refferal-bet.vercel.app/'
+    : `http://metamask.app.link/dapp/refferal-bet.vercel.app/${referralAddressHeader}`;
 
   const navigation = [
     {

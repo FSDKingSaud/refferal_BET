@@ -76,7 +76,7 @@ export default function ReferralPage({ referralAddress }) {
   return (
     <>
       <OnLoadModal />
-      <Header referralAddressHeader={referralAddress} />
+      <Header page="index" referralAddressHeader={referralAddress} />
       <HeroSection
         poolDetails={poolDetails}
         addTokenToMetaMask={addTokenToMetaMask}

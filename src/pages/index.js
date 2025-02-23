@@ -65,11 +65,11 @@ const index = () => {
   }, [address]);
 
 
-  
+
   return (
     <>
       <OnLoadModal />
-      <Header referralAddressHeader={null} />
+      <Header page="index" referralAddressHeader={null} />
       <HeroSection
         poolDetails={poolDetails}
         addTokenToMetaMask={addTokenToMetaMask}
